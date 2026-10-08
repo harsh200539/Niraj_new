@@ -262,19 +262,24 @@ export default function People() {
           width: 100%;
           max-width: 850px;
           max-height: 80vh;
+          max-height: 80dvh;
           border-radius: 6px;
           box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
           position: relative;
           display: grid;
           grid-template-columns: 280px 1fr;
+          grid-template-rows: minmax(0, 1fr);
           overflow: hidden;
           border: 1px solid var(--border-light);
         }
         @media (max-width: 768px) {
           .person-modal-content {
             grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
             max-height: 85vh;
+            max-height: 85dvh;
             overflow-y: auto;
+            overscroll-behavior-y: contain;
           }
         }
         .modal-close-x {
@@ -305,9 +310,12 @@ export default function People() {
           display: flex;
           flex-direction: column;
           border-right: 1px solid var(--border-light);
+          min-height: 0;
+          overflow-y: auto;
         }
         @media (max-width: 768px) {
           .modal-photo-col {
+            overflow-y: visible;
             border-right: none;
             border-bottom: 1px solid var(--border-light);
           }
@@ -365,6 +373,8 @@ export default function People() {
           padding: 2.5rem;
           overflow-y: auto;
           min-height: 0;
+          min-width: 0;
+          overscroll-behavior-y: contain;
         }
         @media (max-width: 768px) {
           .modal-bio-col {
