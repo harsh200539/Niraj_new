@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, MemoryRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import DisclaimerModal from "./components/DisclaimerModal";
@@ -17,6 +17,7 @@ import Legal from "./pages/Legal";
 import ErrorPages from "./pages/ErrorPages";
 
 import "./App.css";
+import Seo from "./seo/Seo.jsx";
 
 // Utility Component to scroll window to top on route change
 function ScrollToTop() {
@@ -27,11 +28,13 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+export default function App({ initialPath }) {
+  const Router = initialPath ? MemoryRouter : BrowserRouter;
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <Router>
+    <Router initialEntries={initialPath ? [initialPath] : undefined}>
+      <Seo />
       <ScrollToTop />
       
       {/* Disclaimer Modal (BCI Compliance Gate) */}
