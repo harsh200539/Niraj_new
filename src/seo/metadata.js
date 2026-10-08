@@ -6,11 +6,25 @@ const titles = {
  'company-law': 'Company Law & Companies Act Compliance',
  ipo: 'IPO Advisory & Due Diligence', llp: 'LLP Formation & Compliance', sebi: 'SEBI & Securities Compliance', fema: 'FEMA & Foreign Investment Advisory', fcra: 'FCRA Advisory & Compliance', ibc: 'IBC & NCLT Advisory', banking: 'Banking & Finance Advisory', audit: 'Secretarial & Compliance Audit', ipr: 'Intellectual Property Advisory', 'corporate-restructuring': 'Corporate Restructuring', 'capital-restructuring': 'Capital Restructuring'
 };
+const descriptions = {
+ "company-law": "Company Law advisory, incorporation, statutory compliance and CSR support under the Companies Act, 2013 from TNT & Associates in Vadodara and Ahmedabad.",
+ "ipo": "IPO advisory, corporate and secretarial due diligence, listing support and pre-IPO and post-IPO compliance from TNT & Associates.",
+ "llp": "LLP incorporation, structuring, statutory compliance and corporate changes with legal and secretarial support from TNT & Associates.",
+ "sebi": "SEBI and securities compliance advisory for applicable regulations, rules and guidelines from TNT & Associates.",
+ "fema": "FEMA compliance and foreign investment advisory under the Foreign Exchange Management Act, 1999 from TNT & Associates.",
+ "fcra": "FCRA advisory and compliance services under the Foreign Contribution Regulation Act, 2010 from TNT & Associates.",
+ "ibc": "Legal and corporate advisory for matters under the Insolvency and Bankruptcy Code, 2016 from TNT & Associates.",
+ "banking": "Legal, regulatory and compliance advisory for banks, financial institutions and regulated entities from TNT & Associates.",
+ "audit": "Secretarial audits and compliance reviews covering corporate laws, regulations and secretarial standards from TNT & Associates.",
+ "ipr": "Intellectual property advisory and legal support to protect, manage and commercially use business assets from TNT & Associates.",
+ "corporate-restructuring": "Corporate restructuring advisory and implementation support for ownership, operations and liabilities from TNT & Associates.",
+ "capital-restructuring": "Share capital and securities restructuring advisory for business, financial and strategic objectives from TNT & Associates."
+};
 const pages = {
  '/': ['Company Secretary in Vadodara | CS Niraj Trivedi', 'TNT & Associates provides company secretarial, IPO, FEMA, SEBI and corporate compliance services from Vadodara and Ahmedabad, serving businesses in India.', 'Home'],
  '/about': ['About TNT & Associates | CS Niraj Trivedi', 'Learn about TNT & Associates, its professional journey, values and corporate advisory practice in Vadodara and Ahmedabad.', 'About Us'],
  '/people': ['Our Team | TNT & Associates, Company Secretaries', 'Meet CS Niraj Trivedi and the company secretaries and legal professionals at TNT & Associates in Vadodara and Ahmedabad.', 'Our People'],
- '/services': ['Company Secretarial Services | TNT & Associates', 'Explore IPO, LLP, SEBI, FEMA, FCRA, IBC, banking, secretarial audit and restructuring services from TNT & Associates.', 'Services'],
+ '/services': ['Company Secretarial Services | TNT & Associates', 'Explore Company Law, IPO, LLP, SEBI, FEMA, FCRA, IBC, audit and corporate restructuring services from TNT & Associates.', 'Services'],
  '/contact': ['Contact CS Niraj Trivedi | Vadodara & Ahmedabad', 'Contact TNT & Associates at 0265-2784388 or niraj@nirajtrivedi-cs.com. Find our Vadodara headquarters and Ahmedabad office.', 'Contact'],
  '/privacy': ['Privacy Policy | TNT & Associates', 'Read the website privacy information for TNT & Associates.', 'Privacy Policy'],
  '/terms': ['Terms of Use | TNT & Associates', 'Read the website terms and regulatory information for TNT & Associates.', 'Terms of Use'],
@@ -21,7 +35,7 @@ export const otherPaths = ['/privacy','/terms','/cookies','/admin','/error'];
 export function getMetadata(input = '/') {
  const path = input === '/' ? '/' : input.replace(/\/+$/, '');
  const service = practices.find(p => path === `/services/${p.id}`);
- const entry = service ? [`${titles[service.id]} | TNT & Associates`, service.shortDescription.replace(/^We provide /, 'TNT & Associates provides ').slice(0,157), service.name] : pages[path];
+ const entry = service ? [`${titles[service.id]} | TNT & Associates`, descriptions[service.id] || service.shortDescription, service.name] : pages[path];
  const known = Boolean(entry);
  const [title, description, label] = entry || [path === '/admin' ? 'Administration | TNT & Associates' : 'Page Not Found | TNT & Associates', 'TNT & Associates website.', 'Page Not Found'];
  const noindex = !publicPaths.includes(path);

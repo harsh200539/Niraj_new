@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { practices } from "../data/mockDb";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 
 export default function ServiceDetail() {
   const { id } = useParams();
-  const navigate = useNavigate();
   
   // Find the requested service from our mock DB
   const service = practices.find((p) => p.id === id);
@@ -30,7 +29,7 @@ export default function ServiceDetail() {
       {/* 1. Hero Banner */}
       <section className="service-hero hairline-bottom">
         <div className="container">
-          <Link to="/services" className="back-link" onClick={(e) => { e.preventDefault(); navigate(-1); }}>
+          <Link to="/services" className="back-link">
             <ArrowLeft size={18} /> Back to Services
           </Link>
           <div className="hero-content mt-space">

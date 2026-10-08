@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { ChevronRight, ShieldCheck, Compass, BarChart, ArrowRight, HelpCircle, X, CheckCircle2 } from "lucide-react";
@@ -6,6 +6,17 @@ import { practices, people } from "../data/mockDb";
 
 export default function ServicesList() {
   const [selectedService, setSelectedService] = useState(null);
+
+  const dialogRef = useRef(null);
+  const closeRef = useRef(null);
+  const openerRef = useRef(null);
+
+  const openService = (service, event) => {
+    openerRef.current = event.currentTarget.matches("a")
+      ? event.currentTarget
+      : event.currentTarget.querySelector(".show-more-link");
+    setSelectedService(service);
+  };
 
   const steps = [
     { year: "Phase 1", title: "Diagnostic Assessment", desc: "We review operational compliance, term sheets, and covenant bindings." },
@@ -28,12 +39,40 @@ export default function ServicesList() {
     };
   }, [selectedService]);
 
-  // Close on Escape key
+  // Keep keyboard and assistive-technology interaction inside the open dialog.
   useEffect(() => {
-    const onKey = (e) => { if (e.key === 'Escape') setSelectedService(null); };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
+    if (!selectedService) return;
+    const root = document.getElementById('root');
+    const previouslyInert = root?.inert;
+    if (root) root.inert = true;
+    closeRef.current?.focus({ preventScroll: true });
+    const onKey = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setSelectedService(null);
+      } else if (event.key === 'Tab') {
+        const controls = [...dialogRef.current.querySelectorAll('a[href], button:not([disabled]), [tabindex="0"]')];
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (!dialogRef.current.contains(document.activeElement)) {
+          event.preventDefault();
+          (event.shiftKey ? last : first)?.focus();
+        } else if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      if (root) root.inert = previouslyInert;
+      if (openerRef.current?.isConnected) openerRef.current.focus({ preventScroll: true });
+    };
+  }, [selectedService]);
 
   return (
     <div className="services-landing-page container section-padding fade-in-up">
@@ -41,7 +80,7 @@ export default function ServicesList() {
       <section className="services-directory-section" style={{ paddingTop: "2.5rem", paddingBottom: "4rem" }}>
         <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
           <span className="title-small accent-gold">Our Expertise</span>
-          <h2 className="title-display" style={{ marginTop: "1rem" }}>Practice Areas</h2>
+          <h1 className="title-display" style={{ marginTop: "1rem" }}>Practice Areas</h1>
         </div>
         <div className="services-cards-grid">
           {practices.map((p) => {
@@ -49,7 +88,7 @@ export default function ServicesList() {
               <div
                 key={p.id}
                 className="service-landing-card editorial-card"
-                onClick={() => setSelectedService(p)}
+                onClick={(event) => openService(p, event)}
                 style={{ cursor: "pointer" }}
               >
                 {p.image && (
@@ -59,13 +98,21 @@ export default function ServicesList() {
                   <h3>{p.name}</h3>
                   <p className="text-muted card-desc">{p.shortDescription}</p>
                   <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setSelectedService(p); }}
+                    <Link
+                      to={`/services/${p.id}`}
+                      aria-label={`Show more about ${p.name}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+                          e.preventDefault();
+                          openService(p, e);
+                        }
+                      }}
                       className="show-more-link"
-                      style={{ background: "none", border: "none", padding: 0, cursor: "pointer", display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", fontSize: "0.95rem" }}
+                      style={{ background: "none", border: "none", padding: 0, cursor: "pointer", display: "inline-flex", alignItems: "center", color: "var(--accent-gold)", fontWeight: "500", fontSize: "0.95rem", textDecoration: "none" }}
                     >
                       Show more <span style={{ marginLeft: "0.5rem", fontSize: "1.2rem", transition: "transform 0.3s ease" }}>→</span>
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -77,13 +124,13 @@ export default function ServicesList() {
       {/* Service Detail Modal Popup */}
       {selectedService && createPortal(
         <div className="service-modal-overlay" onClick={() => setSelectedService(null)}>
-          <div className="service-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="service-modal-close-x" onClick={() => setSelectedService(null)} aria-label="Close">
+          <div ref={dialogRef} className="service-modal-content" role="dialog" aria-modal="true" aria-labelledby="service-dialog-title" onClick={(e) => e.stopPropagation()}>
+            <button ref={closeRef} className="service-modal-close-x" onClick={() => setSelectedService(null)} aria-label="Close">
               <X size={20} />
             </button>
             <div className="service-modal-header">
               <span className="title-small accent-gold">Practice Area</span>
-              <h2 className="service-modal-title">{selectedService.name}</h2>
+              <h2 id="service-dialog-title" className="service-modal-title">{selectedService.name}</h2>
             </div>
 
             <div className="service-modal-body">
@@ -114,6 +161,9 @@ export default function ServicesList() {
             </div>
 
             <div className="service-modal-footer">
+              <Link to={`/services/${selectedService.id}`} className="service-full-details-link" onClick={() => setSelectedService(null)}>
+                View full details <span aria-hidden="true">→</span>
+              </Link>
               <Link to="/contact" className="btn-primary" onClick={() => setSelectedService(null)}>
                 Schedule Consultation
               </Link>
@@ -520,8 +570,24 @@ export default function ServicesList() {
           color: var(--text-secondary);
           line-height: 1.5;
         }
+        .service-full-details-link {
+          color: var(--accent-gold);
+          text-decoration: none;
+          font-size: 0.95rem;
+          font-weight: 500;
+          margin-right: auto;
+        }
+        .show-more-link:focus-visible,
+        .service-modal-content a:focus-visible,
+        .service-modal-content button:focus-visible {
+          outline: 2px solid var(--accent-gold);
+          outline-offset: 4px;
+        }
         .service-modal-footer {
           display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
           justify-content: flex-end;
           padding-top: 1rem;
           border-top: 1px solid var(--border-light);
