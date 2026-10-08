@@ -45,6 +45,7 @@ export default function ServiceDetail() {
         <div className="container" style={{ maxWidth: "800px", margin: "0 auto" }}>
           
           <div className="service-description">
+            {service.heading && <h2 className="title-medium" style={{ marginBottom: "1rem" }}>{service.heading}</h2>}
             <p className="body-large text-primary" style={{ marginBottom: "2rem" }}>
               {service.description}
             </p>
@@ -68,7 +69,7 @@ export default function ServiceDetail() {
               </ul>
             </div>
           )}
-          
+          {service.closingNote && <p className="text-muted service-closing-note" style={{ marginTop: "2rem", lineHeight: "1.7" }}>{service.closingNote}</p>}
         </div>
       </section>
 
@@ -86,6 +87,17 @@ export default function ServiceDetail() {
           padding-top: calc(var(--header-height) + 2rem);
           text-align: left;
         }
+        .service-description p,
+        .includes-item span,
+        .service-closing-note {
+          text-align: justify;
+          text-justify: inter-word;
+          text-align-last: left;
+          hyphens: none;
+          overflow-wrap: break-word;
+          min-width: 0;
+        }
+        .includes-item span { flex: 1; }
         .service-hero {
           padding-bottom: 1.5rem;
           margin-bottom: 1.5rem;

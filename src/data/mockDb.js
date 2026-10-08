@@ -42,6 +42,36 @@ export const offices = [
 
 export const practices = [
   {
+    "id": "company-law",
+    "name": "Company Law",
+    "shortDescription": "Comprehensive advisory and compliance services under the Companies Act, 2013 and rules framed thereunder, supporting businesses throughout their corporate lifecycle.",
+    "heading": "Companies Act, 2013 & Rules Framed Thereunder",
+    "description": "We provide comprehensive advisory and compliance services under the Companies Act, 2013 assisting companies in meeting their statutory obligations and maintaining effective corporate governance. Our services are designed to support businesses throughout their corporate lifecycle, from incorporation and routine compliances to significant corporate actions and regulatory matters.",
+    "details": "",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    "includes": [
+        "Promotion, formation, and incorporation of companies including Section 8 (Not for Profit Organization/NGO), Producer Companies, Chapter XXI Companies (Conversion into a Company) and matter relating therewith including choice of and type of companies, drafting of Memorandum and Articles of Associations and other documents. This includes conversion of partnership firm into company/ LLP and vice a versa.",
+        "Annual filing including XBRL.",
+        "Issuing status report on statutory/ legal compliance and Issuing Secretarial Compliance Report/ Due Diligence Report wherever it is necessary.",
+        "Appearing as an authorized representative before the Central Government, Regional Director, Registrar of Companies, SEBI, SAT, NCLT and NCLAT on various matters on Corporate Law Related issues.",
+        "Advising and attending on conducting the meeting of the Board, Shareholders and Court convened meeting and preparation of documents such as notice, explanatory statements, minutes, Board’s Report, Corporate Governance Report, Business Responsibility and Sustainability Report, etc.",
+        "Helping company in finalization of financial statements including Balance Sheets, Notes thereon.",
+        "Advising and drafting documents on Buy Back of Securities for Listed and Unlisted Companies.",
+        "Providing guidance on restructuring of company, which includes reduction of capital, merger, amalgamation, demerger and also to carry due diligence, etc. and to draft Scheme of Compromise and to provide incidental services to the company.",
+        "Providing opinion on various corporate laws.",
+        "Advising on maintenance of Secretarial Records and Statutory Books and Registers.",
+        "Advising on timely compliance of statutory requirements under Corporate Laws by the companies (Private and Public) to avoid penal action and prosecution to the Companies and its Directors.",
+        "Pre-certification of documents, returns etc. to be submitted with the office of the Registrar of Companies, Regional Director, Ministry of Corporate Affairs etc.",
+        "Providing necessary guidance for transfer, transmission, transposition, dematerialization, re-materialization of shares and other securities etc. including action to be taken, correspondence with member’s and drafting affidavit, indemnity bond including necessary communication with Depositories and Depository Participants (DP).",
+        "Shifting of Registered Office of the Company from one State to another, Change of name of the company, Conversion of status of the company from private to public and vis-vis and to LLP. Drafting of various documents, petitions, affidavits, advertisements, letters, resolution, forms etc. for the same.",
+        "Providing guidance for Striking off or winding off the company and drafting of necessary resolutions, documents, forms etc.",
+        "To act as scrutinizer in case of Postal Ballot, Court Conveyed Meeting, Voting through Ballot / E Voting etc.",
+        "Carrying Due Diligence of the company to make sure that the company has complied with the requirements of corporate laws and regulations made thereunder.",
+        "Providing guidance on various issues relating to Corporate Social Responsibility (CSR) including drafting of Policy implement and monitor a cohesive CSR policy that is not only compliant with section 135 of the Act but also need-based, strategic, integrated with the value chains, iterative and geared towards business responsibility reporting. Based on our experience and research, we can offer significant value to our clients (at different stages of the CSR lifecycle)."
+    ],
+    "closingNote": "We have worked with a good number of companies and have offered comprehensive and customizable services such as guidance notes along with enlightenment of the concept of CSR, its applicability, framing of CSR Policy, annual Action Plan and its implementation for the financial year to help you comply with the provisions of CSR under the Companies Act, 2013."
+},
+  {
     id: "ipo",
     name: "Initial Public Offering (IPO) Services",
     shortDescription: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements.",

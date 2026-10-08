@@ -360,6 +360,10 @@ export default function About() {
           color: var(--accent-gold);
         }
         .message-quote {
+          text-align: justify;
+          text-justify: inter-word;
+          text-align-last: left;
+          hyphens: none;
           font-family: var(--font-serif);
           font-size: 1.35rem;
           font-style: italic;

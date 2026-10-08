@@ -37,55 +37,6 @@ export default function ServicesList() {
 
   return (
     <div className="services-landing-page container section-padding fade-in-up">
-      {/* 1.5. Corporate Overview & Companies Act */}
-      <section className="corporate-overview-section" style={{ paddingBottom: "4rem" }}>
-
-        <div className="companies-act-seamless">
-          <div style={{ marginBottom: "4rem" }}>
-            <span className="title-small accent-gold" style={{ display: "block", textAlign: "left" }}>Core Expertise</span>
-            <h2 className="title-display" style={{ fontWeight: "500", lineHeight: "1.1", marginTop: "1rem", textAlign: "left" }}>
-              Companies Act, 2013 & <span style={{ fontStyle: "italic" }}>Rules Framed Thereunder</span>
-            </h2>
-            <div className="max-width-para" style={{ marginTop: "1.5rem" }}>
-              <p className="text-muted" style={{ margin: 0, fontSize: "1.1rem", lineHeight: "1.7", textAlign: "justify", textJustify: "inter-word", hyphens: "auto", WebkitHyphens: "auto" }}>
-                We provide comprehensive advisory and compliance services under the Companies Act, 2013 assisting companies in meeting their statutory obligations and maintaining effective corporate governance. Our services are designed to support businesses throughout their corporate lifecycle, from incorporation and routine compliances to significant corporate actions and regulatory matters. It includes:
-              </p>
-            </div>
-          </div>
-
-          <div className="services-bullet-list max-width-para" style={{ maxWidth: "1000px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "3rem" }}>
-            <ul>
-              <li>Promotion, formation, and incorporation of companies including Section 8 (Not for Profit Organization/NGO), Producer Companies, Chapter XXI Companies (Conversion into a Company) and matter relating therewith including choice of and type of companies, drafting of Memorandum and Articles of Associations and other documents. This includes conversion of partnership firm into company/ LLP and vice a versa.</li>
-              <li>Annual filing including XBRL.</li>
-              <li>Issuing status report on statutory/ legal compliance and Issuing Secretarial Compliance Report/ Due Diligence Report wherever it is necessary.</li>
-              <li>Appearing as an authorized representative before the Central Government, Regional Director, Registrar of Companies, SEBI, SAT, NCLT and NCLAT on various matters on Corporate Law Related issues.</li>
-              <li>Advising and attending on conducting the meeting of the Board, Shareholders and Court convened meeting and preparation of documents such as notice, explanatory statements, minutes, Board’s Report, Corporate Governance Report, Business Responsibility and Sustainability Report, etc.</li>
-              <li>Helping company in finalization of financial statements including Balance Sheets, Notes thereon.</li>
-              <li>Advising and drafting documents on Buy Back of Securities for Listed and Unlisted Companies.</li>
-              <li>Providing guidance on restructuring of company, which includes reduction of capital, merger, amalgamation, demerger and also to carry due diligence, etc. and to draft Scheme of Compromise and to provide incidental services to the company.</li>
-              <li>Providing opinion on various corporate laws.</li>
-            </ul>
-            <ul>
-              <li>Advising on maintenance of Secretarial Records and Statutory Books and Registers.</li>
-              <li>Advising on timely compliance of statutory requirements under Corporate Laws by the companies (Private and Public) to avoid penal action and prosecution to the Companies and its Directors.</li>
-              <li>Pre-certification of documents, returns etc. to be submitted with the office of the Registrar of Companies, Regional Director, Ministry of Corporate Affairs etc.</li>
-              <li>Providing necessary guidance for transfer, transmission, transposition, dematerialization, re-materialization of shares and other securities etc. including action to be taken, correspondence with member’s and drafting affidavit, indemnity bond including necessary communication with Depositories and Depository Participants (DP).</li>
-              <li>Shifting of Registered Office of the Company from one State to another, Change of name of the company, Conversion of status of the company from private to public and vis-vis and to LLP. Drafting of various documents, petitions, affidavits, advertisements, letters, resolution, forms etc. for the same.</li>
-              <li>Providing guidance for Striking off or winding off the company and drafting of necessary resolutions, documents, forms etc.</li>
-              <li>To act as scrutinizer in case of Postal Ballot, Court Conveyed Meeting, Voting through Ballot / E Voting etc.</li>
-              <li>Carrying Due Diligence of the company to make sure that the company has complied with the requirements of corporate laws and regulations made thereunder.</li>
-              <li>Providing guidance on various issues relating to Corporate Social Responsibility (CSR) including drafting of Policy implement and monitor a cohesive CSR policy that is not only compliant with section 135 of the Act but also need-based, strategic, integrated with the value chains, iterative and geared towards business responsibility reporting. Based on our experience and research, we can offer significant value to our clients (at different stages of the CSR lifecycle).</li>
-            </ul>
-          </div>
-
-          <div className="csr-closing-box mx-auto" style={{ maxWidth: "1000px", marginTop: "3rem", padding: "2rem", borderLeft: "2px solid var(--accent-gold)", backgroundColor: "var(--bg-card)", borderRadius: "0 16px 16px 0", boxShadow: "0 12px 32px rgba(31, 31, 31, 0.04)" }}>
-            <p className="text-muted" style={{ fontSize: "1.05rem", margin: 0, lineHeight: "1.7", textAlign: "justify" }}>
-              We have worked with a good number of companies and have offered comprehensive and customizable services such as guidance notes along with enlightenment of the concept of CSR, its applicability, framing of CSR Policy, annual Action Plan and its implementation for the financial year to help you comply with the provisions of CSR under the Companies Act, 2013.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* 2. Interactive Service Grid */}
       <section className="services-directory-section" style={{ paddingTop: "2.5rem", paddingBottom: "4rem" }}>
         <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
@@ -136,6 +87,7 @@ export default function ServicesList() {
             </div>
 
             <div className="service-modal-body">
+              {selectedService.heading && <h3 className="title-medium" style={{ marginBottom: "1rem" }}>{selectedService.heading}</h3>}
               <p className="service-modal-desc">
                 {selectedService.description}
               </p>
@@ -158,6 +110,7 @@ export default function ServicesList() {
                   </ul>
                 </div>
               )}
+              {selectedService.closingNote && <p className="service-modal-details" style={{ marginTop: "1.5rem" }}>{selectedService.closingNote}</p>}
             </div>
 
             <div className="service-modal-footer">
@@ -521,6 +474,17 @@ export default function ServicesList() {
           padding-right: 0.5rem;
           margin-bottom: 1.5rem;
         }
+        .service-modal-desc,
+        .service-modal-details,
+        .service-modal-item span {
+          text-align: justify;
+          text-justify: inter-word;
+          text-align-last: left;
+          hyphens: none;
+          overflow-wrap: break-word;
+          min-width: 0;
+        }
+        .service-modal-item span { flex: 1; }
         .service-modal-desc {
           font-size: 1.05rem;
           line-height: 1.7;

@@ -3,6 +3,7 @@ export const origin = 'https://www.nirajtrivedi-cs.com';
 const orgId = `${origin}/#organization`;
 const websiteId = `${origin}/#website`;
 const titles = {
+ 'company-law': 'Company Law & Companies Act Compliance',
  ipo: 'IPO Advisory & Due Diligence', llp: 'LLP Formation & Compliance', sebi: 'SEBI & Securities Compliance', fema: 'FEMA & Foreign Investment Advisory', fcra: 'FCRA Advisory & Compliance', ibc: 'IBC & NCLT Advisory', banking: 'Banking & Finance Advisory', audit: 'Secretarial & Compliance Audit', ipr: 'Intellectual Property Advisory', 'corporate-restructuring': 'Corporate Restructuring', 'capital-restructuring': 'Capital Restructuring'
 };
 const pages = {
