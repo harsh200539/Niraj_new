@@ -1,15 +1,6 @@
 // Relational Mock Database for Niraj Trivedi CS (Practicing Company Secretaries)
 // Single Source of Truth: https://niraj-seven.vercel.app
 
-import AshishImg from '../images/Ashish.jpeg';
-import IsmailImg from '../images/Ismail.jpeg';
-import MonaImg from '../images/Mona.jpeg';
-import NirajImg from '../images/Niraj.jpeg';
-import RiyaImg from '../images/Riya.jpeg';
-import SamirImg from '../images/Samirbhai.jpeg';
-import VedantImg from '../images/Vedant.jpeg';
-import VrundImg from '../images/Vrund.jpeg';
-
 export const offices = [
   {
     id: "vadodara",
@@ -242,7 +233,7 @@ export const people = [
     degree: "FCS, B.Com (Hons.), LL.B., ACIS (U.K.), PGDCL, PGDLP",
     officeId: "vadodara",
     linkedin: "https://www.linkedin.com/in/niraj-trivedi-5458a117",
-    image: NirajImg,
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2000&auto=format&fit=crop",
     bio: "Fellow member of ICSI and founder of this firm. With over 30 years of professional experience, he has built an outstanding reputation in the field of Corporate Law, advising clients on the matters relating to the Companies Act, 2013, Foreign Exchange Management Act, 1999 (“FEMA”), Securities and Exchange Board of India Act, 1992 and its Rules and Regulations, Foreign Contribution (Regulation)Act, 2010 (“FCRA”), Insolvency and Bankruptcy Code, 2016 (“IBC\"), etc.\n\nHe has served as the chairman of the Vadodara Chapter of ICSI and currently leads the overall function of the firm. Academically, he holds a B.Com. (Hons.), is an Associate Member of ACIS (U.K.), and possesses an LL.B. (Special), a Post Graduate Diploma in Cyber Law (PGDCL) and a Post Graduate Diploma in Labour Laws and Practice (PGDLP).\n\nAt present, he is represent clients before various authorities such as National Company Law Tribunals (“NCLT”), National Company Law Appellate Tribunal (“NCLAT”) Regional Director (“RD”), Registrar of Companies (“ROC\"), Reserve Bank of India (“RBI\"), Securities and Exchange Board of India (“SEBI”).\n\nIn addition to his advisory practice, he also involves in giving opinion on various matters of corporate laws and deliberating lectures at various platforms and Study Circles meeting organized by ICSI and ICAI.",
     practices: ["ipo", "nclt", "fema", "secretarial-audit", "corporate-restructuring", "change-in-management"],
     sectors: [],
@@ -255,7 +246,7 @@ export const people = [
     title: "LEGAL COUNSEL",
     degree: "LL.M. (Gold Medalist)",
     officeId: "vadodara",
-    image: MonaImg,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
     bio: "She is LLM (Gold Medalist) by qualification and brings over 25 years of professional experience in the field of Corporate Laws, Banking Regulation, Revenue Matters, Debt Recovery, Title Clearance, etc. Since the inception of TNT & Associates, she has played a pivotal role in the firm's legal and advisory practice, contributing significantly to its growth and reputation.\n\nShe is responsible for drafting and reviewing a wide range of legal documents including Applications, Petitions, Appeals, Scheme and other legal documents to be submitted with statutory authorities such as NCLT, NCLAT, SEBI, ROC, RD, RBI etc.",
     practices: ["ipr", "nclt"],
     sectors: [],
@@ -268,7 +259,7 @@ export const people = [
     title: "PARTNER",
     degree: "ACS",
     officeId: "ahmedabad",
-    image: AshishImg,
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Company Secretary and senior partner of the firm, with over 15 years of professional experience in the field of Corporate Laws. His expertise spans corporate compliance, regulatory advisory, and representation before various statutory authorities.\n\nHe heads the firm's Ahmedabad office and is responsible for liaising with key regulatory and government authorities, including the Registrar of Companies (ROC), Regional Director (RD), National Company Law Tribunal (NCLT), and the Stamp Office.",
     practices: ["due-diligence", "capital-restructuring", "ipo"],
     sectors: [],
@@ -281,7 +272,7 @@ export const people = [
     title: "SENIOR ASSOCIATE",
     degree: "FCS, B.Com, LL.B. (Spl.)",
     officeId: "vadodara",
-    image: SamirImg,
+    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=2000&auto=format&fit=crop",
     bio: "He is a Commerce Graduate with LLB (Spl.) and a Fellow Company Secretary and having experience of around 35 years in the Corporate World. Throughout his career, he has held key leadership positions in the company secretarial and compliance functions of some of India's leading organizations.\n\nHe has served in the Company Secretarial Department of reputed companies such as Gujarat Industries Power Company Limited, Reliance Industries Limited, Reliance Infocomm Limited, Zee Learn Limited and JMC Projects (India) Limited, a Kalptaaru Group Company.\n\nHe possesses experience in the areas of Company Law, Corporate Governance, Corporate Restructuring, SEBI Act, 1992 and its Rules and Regulations, Corporate Compliance and Regulatory Advisory.",
     practices: ["ipo", "secretarial-audit", "corporate-restructuring"],
     sectors: [],
@@ -294,7 +285,7 @@ export const people = [
     title: "SENIOR ASSOCIATE",
     degree: "ACS",
     officeId: "vadodara",
-    image: IsmailImg,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Company Secretary with around two years of professional experience in the areas of Corporate Laws and Foreign Exchange Management Act (FEMA) compliances. He is actively involved in providing corporate advisory and compliance support to a diverse range of clients.\n\nHis core responsibilities include incorporation of companies and LLPs, conversion of companies and LLPs, and ensuring statutory compliances for private limited and unlisted companies under the Companies Act, 2013 and the Limited Liability Partnership Act, 2008.",
     practices: ["fema", "change-in-management"],
     sectors: [],
@@ -307,7 +298,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "ACS, B.Com",
     officeId: "vadodara",
-    image: VrundImg,
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2000&auto=format&fit=crop",
     bio: "He is an Associate Member of the Institute of Company Secretaries of India (ICSI) and a Bachelor of Commerce graduate. He possesses over two years of professional experience in the areas of Corporate Laws, FEMA, and Secretarial Compliances.\n\nHe is actively involved in handling matters relating to incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting, and regulatory filings. He also handles matters pertaining to the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC) and undertakes various corporate restructuring and compliance-related assignments.",
     practices: ["fema", "nclt", "corporate-restructuring"],
     sectors: [],
@@ -320,7 +311,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "ACS",
     officeId: "vadodara",
-    image: VedantImg,
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
     bio: "He is a qualified Company Secretary with over two years of professional experience in the field of Corporate Laws. He has developed expertise in corporate compliance, due diligence and secretarial advisory services.\n\nHis core responsibilities include conducting due diligence for Initial Public Offerings (IPOs), incorporation and registration of companies, including compliances relating to GIFT City and undertaking secretarial audits for listed and unlisted companies. He also assists clients in ensuring regulatory compliance and maintaining high standards of corporate governance.",
     practices: ["ipo", "due-diligence", "secretarial-audit"],
     sectors: [],
@@ -333,7 +324,7 @@ export const people = [
     title: "ASSOCIATE",
     degree: "M.Com (CS Semi-Qualified)",
     officeId: "vadodara",
-    image: RiyaImg,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2000&auto=format&fit=crop",
     bio: "She is Semi-Qualified Company Secretary and holds a master’s degree in commerce. She has over three years of professional experience in the field of Corporate Laws, FEMA and secretarial compliances.\n\nShe is actively involved in handling incorporation of Companies and LLPs, entity conversions, secretarial compliances, legal drafting and regulatory filings. She also assists clients in matters before the National Company Law Tribunal (NCLT), Regional Director (RD) and Registrar of Companies (ROC), providing efficient and compliant solutions across a wide range of corporate legal and regulatory matters.",
     practices: ["fema", "nclt"],
     sectors: [],
