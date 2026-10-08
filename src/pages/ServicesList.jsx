@@ -286,10 +286,10 @@ export default function ServicesList() {
           font-size: 0.95rem;
           line-height: 1.6;
           margin-bottom: var(--space-md);
-          text-align: justify;
-          text-justify: inter-word;
-          hyphens: auto;
-          -webkit-hyphens: auto;
+          text-align: left;
+          text-align-last: left;
+          hyphens: none;
+          -webkit-hyphens: none;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
