@@ -80,7 +80,13 @@ export default function ServicesList() {
       <section className="services-directory-section" style={{ paddingTop: "2.5rem", paddingBottom: "4rem" }}>
         <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
           <span className="title-small accent-gold">Our Expertise</span>
-          <h1 className="title-display" style={{ marginTop: "1rem" }}>Practice Areas</h1>
+          <h1 className="title-display" style={{ marginTop: "1rem" }}>Company Secretarial Services in Vadodara</h1>
+          <p className="body-large text-muted" style={{ marginTop: "1.5rem", maxWidth: "850px" }}>
+            TNT &amp; Associates provides company secretary services from Fatehgunj, Vadodara,
+            including company incorporation, Companies Act compliance, LLP formation,
+            secretarial audits, IPO advisory and FEMA compliance. Explore our practice
+            areas below, or <Link to="/contact">contact our Vadodara office</Link> to discuss your requirements.
+          </p>
         </div>
         <div className="services-cards-grid">
           {practices.map((p) => {
