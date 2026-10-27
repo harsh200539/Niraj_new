@@ -77,13 +77,13 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title title-display" style={{ fontWeight: "500", lineHeight: "1.1" }}>
-              TNT &amp; Associates • <span style={{ fontStyle: "italic" }}>Practicing Company Secretaries</span>
+              Company Secretary Services in <span style={{ fontStyle: "italic" }}>Vadodara</span>
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
-              The firm is recognized as one of the leading Company Secretary firms in Gujarat, offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
+              TNT & Associates, practising company secretaries with a head office in Fatehgunj, Vadodara, provides company secretary services and corporate compliance advisory to businesses in Vadodara, Ahmedabad and across India. The firm offers corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
             </p>
             <div className="hero-actions">
-              <Link to="/services" className="btn-primary">Explore Services</Link>
+              <Link to="/services" className="btn-primary">Explore Company Secretary Services</Link>
             </div>
           </div>
         </div>
@@ -99,8 +99,8 @@ export default function Home() {
           <div className="intro-title-col">
             {/* <img src={logoImg} alt="TNT & Associates Logo" className="intro-logo-badge" /> */}
             <span className="title-small accent-gold">Company Overview</span>
-            <h2 className="title-medium intro-headline">We deliver clarity where corporate ambition meets regulatory reality.</h2>
-            <Link to="/about" className="gold-link mt-space">Learn Our History →</Link>
+            <h2 className="title-medium intro-headline">Company secretarial and corporate compliance support in Vadodara.</h2>
+            <Link to="/about" className="gold-link mt-space">About Our Company Secretaries →</Link>
           </div>
           <div className="intro-text-col" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             <p
@@ -114,7 +114,7 @@ export default function Home() {
                 margin: 0
               }}
             >
-              At TNT &amp; Associates, we help organizations resolve their most challenging regulatory hurdles and transactional milestones. Our qualified professionals bring compliance foresight to every engagement.
+              At TNT &amp; Associates, CS Niraj Trivedi and our team help businesses with company incorporation, Companies Act compliance, secretarial audits and corporate transactions. Our Vadodara head office is at 218-220 Saffron Complex, Fatehgunj.
             </p>
             <p
               style={{
