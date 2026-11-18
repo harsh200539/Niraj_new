@@ -2,6 +2,24 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
+      "src": "/(.*)",
+      "has": [
+        { "type": "host", "value": "^niraj-new(?:-kappa)?\\.vercel\\.app$" }
+      ],
+      "headers": { "Location": "https://www.nirajtrivedi-cs.com/$1" },
+      "status": 308
+    },
+    {
+      "src": "/index\\.html",
+      "headers": { "Location": "/" },
+      "status": 308
+    },
+    {
+      "src": "/((?:about|people|contact|services(?:/[^/]+)?|privacy|terms|cookies|admin|error))(?:/index\\.html|/)",
+      "headers": { "Location": "/$1" },
+      "status": 308
+    },
+    {
       "src": "/admin",
       "headers": {
         "X-Robots-Tag": "noindex, nofollow"

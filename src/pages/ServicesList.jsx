@@ -80,7 +80,7 @@ export default function ServicesList() {
       <section className="services-directory-section" style={{ paddingTop: "2.5rem", paddingBottom: "4rem" }}>
         <div className="section-header-styled" style={{ marginBottom: "2.5rem" }}>
           <span className="title-small accent-gold">Our Expertise</span>
-          <h1 className="title-display" style={{ marginTop: "1rem" }}>Company Secretarial Services in Vadodara</h1>
+          <h1 className="title-display" style={{ marginTop: "1rem" }}>Corporate Compliance &amp; Advisory Services</h1>
           <p className="body-large text-muted" style={{ marginTop: "1.5rem", maxWidth: "850px" }}>
             TNT &amp; Associates provides company secretary services from Fatehgunj, Vadodara,
             including company incorporation, Companies Act compliance, LLP formation,
@@ -98,10 +98,10 @@ export default function ServicesList() {
                 style={{ cursor: "pointer" }}
               >
                 {p.image && (
-                  <div className="card-bg-img" style={{ backgroundImage: `url(${p.image})` }}></div>
+                  <img className="card-bg-img" src={p.image} alt="" loading="lazy" decoding="async" />
                 )}
                 <div className="card-content-wrap" style={{ display: "flex", flexDirection: "column", height: "100%", width: "100%" }}>
-                  <h3>{p.name}</h3>
+                  <h2>{p.name}</h2>
                   <p className="text-muted card-desc">{p.shortDescription}</p>
                   <div style={{ marginTop: "auto", paddingTop: "1.5rem" }}>
                     <Link
@@ -187,7 +187,7 @@ export default function ServicesList() {
       {/* 5. CTA & Contact Gateway */}
       <section className="services-cta-banner">
         <div className="cta-box-layout">
-          <h3 className="title-medium">Need bespoke advisory on an upcoming transaction?</h3>
+          <h2 className="title-medium">Need bespoke advisory on an upcoming transaction?</h2>
           <p className="text-muted">Our regional coordinators are ready to align specialist teams with your goals.</p>
           <Link to="/contact" className="btn-primary mt-space">Consult Strategy Leads</Link>
         </div>
@@ -257,8 +257,10 @@ export default function ServicesList() {
           left: 0;
           right: 0;
           bottom: 0;
-          background-size: cover;
-          background-position: center;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
           opacity: 0.16;
           filter: grayscale(15%);
           transition: transform 0.5s ease, opacity 0.5s ease;
@@ -277,7 +279,7 @@ export default function ServicesList() {
           position: relative;
           z-index: 2;
         }
-        .service-landing-card h3 {
+        .service-landing-card h2 {
           font-size: 1.35rem;
           font-family: var(--font-sans);
           font-weight: 600;

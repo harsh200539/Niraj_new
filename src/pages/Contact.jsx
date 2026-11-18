@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Phone, Mail, CheckCircle, Clock } from "lucide-react";
+import { Phone, Mail, CheckCircle, MapPin } from "lucide-react";
 import LinkedinIcon from "../components/LinkedinIcon";
 import { offices, practices } from "../data/mockDb";
 import logoImg from "../assets/TNT.png";
 
 export default function Contact() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [draftHref, setDraftHref] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", topic: "general", message: "" });
 
   const hqOffice = offices.find(o => o.id === "vadodara") || offices[0];
@@ -13,10 +13,11 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      setFormSubmitted(true);
-      setFormData({ name: "", email: "", topic: "general", message: "" });
-    }, 800);
+    const topic = practices.find(p => p.id === formData.topic)?.name ?? "General Corporate Inquiry";
+    const body = [`Name: ${formData.name}`, `Email: ${formData.email}`, "", formData.message].join("\r\n");
+    const href = `mailto:niraj@nirajtrivedi-cs.com?subject=${encodeURIComponent(topic)}&body=${encodeURIComponent(body)}`;
+    setDraftHref(href);
+    window.location.href = href;
   };
 
   return (
@@ -36,6 +37,10 @@ export default function Contact() {
             <p className="office-address">{hqOffice.address}</p>
 
             <div className="office-meta-rows">
+              <a href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(hqOffice.address)}`} target="_blank" rel="noopener noreferrer" className="meta-row">
+                <div className="meta-icon-wrapper"><MapPin size={16} /></div>
+                <span>Directions to the Vadodara office ↗</span>
+              </a>
               <a href={`tel:${hqOffice.phone}`} className="meta-row">
                 <div className="meta-icon-wrapper"><Phone size={16} /></div>
                 <span>{hqOffice.phone}</span>
@@ -84,11 +89,11 @@ export default function Contact() {
         {/* Right Side: Inquiry Form */}
         <div className="contact-right-col">
           <div className="contact-form-box">
-            {!formSubmitted ? (
+            {!draftHref ? (
               <form onSubmit={handleSubmit} className="inquiry-form">
                 <div className="form-header-box">
                   <h3>Submit an Inquiry</h3>
-                  <p className="form-helper">Complete the fields below and our team will route your inquiry to the appropriate lead.</p>
+                  <p className="form-helper">Complete the fields below to open an email draft addressed to our office.</p>
                 </div>
 
                 <div className="form-fields">
@@ -149,14 +154,14 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <button type="submit" className="btn-primary form-submit-btn">Send Message</button>
+                <button type="submit" className="btn-primary form-submit-btn">Open Email Draft</button>
               </form>
             ) : (
-              <div className="success-screen">
+              <div className="success-screen" role="status">
                 <CheckCircle size={48} className="success-icon" />
-                <h3 className="serif-display">Inquiry Sent</h3>
-                <p>Thank you for reaching out. We will direct your details to the relevant practice lead and reply within one business day.</p>
-                <button className="btn-primary" onClick={() => setFormSubmitted(false)}>Send Another Message</button>
+                <h3 className="serif-display">Email Draft Ready</h3>
+                <p>Send the draft from your email app to complete your inquiry. <a href={draftHref}>Open the draft again</a> if it did not open.</p>
+                <button className="btn-primary" onClick={() => setDraftHref("")}>Back to Inquiry</button>
               </div>
             )}
           </div>

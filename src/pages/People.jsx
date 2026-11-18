@@ -52,7 +52,7 @@ export default function People() {
                 <div className="person-meta" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "1.5rem" }}>
                   <div className="person-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                     <div>
-                      <h3 style={{ fontWeight: "bold", marginBottom: "0.2rem" }}>{person.name}</h3>
+                      <h2 style={{ fontWeight: "bold", marginBottom: "0.2rem" }}>{person.name}</h2>
                       {person.degree && <p className="person-degree" style={{ fontSize: "0.82rem", color: "var(--accent-gold)", fontWeight: "500", margin: "0 0 0.4rem 0" }}>{person.degree}</p>}
                       <p className="person-title" style={{ margin: 0 }}>{person.title}</p>
                     </div>
@@ -460,7 +460,7 @@ export default function People() {
         .person-meta {
           padding: 1.5rem;
         }
-        .person-meta h3 {
+        .person-meta h2 {
           font-size: 1.25rem;
           font-family: var(--font-sans);
           font-weight: 600;

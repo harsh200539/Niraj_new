@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="container footer-content-grid">
         <div className="footer-brand-section">
           <Link to="/" className="footer-logo" aria-label="Home">
-            <img src={logoImg} alt="TNT & Associates Logo" className="footer-logo-img" />
+            <img src={logoImg} alt="TNT & Associates Logo" width={842} height={595} loading="lazy" decoding="async" className="footer-logo-img" />
             <span className="logo-brand">TNT &amp; ASSOCIATES</span>
             <span className="logo-sub">COMPANY SECRETARIES</span>
           </Link>

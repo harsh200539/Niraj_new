@@ -1,7 +1,27 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { practices } from "../data/mockDb";
+import { practices, people } from "../data/mockDb";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+
+const relatedServices = {
+  "company-law": ["llp", "audit", "corporate-restructuring"],
+  ipo: ["sebi", "audit", "capital-restructuring"],
+  llp: ["company-law", "audit"],
+  audit: ["company-law", "sebi"],
+  fcra: ["company-law"],
+  ipr: ["company-law"],
+  "capital-restructuring": ["company-law", "corporate-restructuring"],
+};
+
+const officialReferences = {
+  "company-law": ["Ministry of Corporate Affairs", "https://www.mca.gov.in/"],
+  ipo: ["SEBI regulations", "https://www.sebi.gov.in/legal/regulations.html"],
+  llp: ["MCA instructions for Form FiLLiP", "https://www.mca.gov.in/content/dam/mca-aem-forms/instructionkits/Instruction%20Kit_Form%20FiLLiP.pdf"],
+  audit: ["ICSI guidance on secretarial audit", "https://www.icsi.edu/media/webmodules/Guidance%20Note%20on%20Secretarial%20Audit%20-%20Release%201.4.pdf"],
+  fcra: ["Ministry of Home Affairs FCRA portal", "https://fcraonline.nic.in/"],
+  ipr: ["Intellectual Property India", "https://www.ipindia.gov.in/"],
+  "capital-restructuring": ["Ministry of Corporate Affairs", "https://www.mca.gov.in/"],
+};
 
 export default function ServiceDetail() {
   const { id } = useParams();
@@ -24,6 +44,11 @@ export default function ServiceDetail() {
     );
   }
 
+  const groups = service.capabilityGroups ?? [{ items: service.includes }];
+  const related = (relatedServices[id] ?? []).map(key => practices.find(p => p.id === key));
+  const reference = officialReferences[id];
+  const lead = reference && people.find(person => person.id === service.leadPartnerId);
+
   return (
     <div className="service-detail-page">
       {/* 1. Hero Banner */}
@@ -34,7 +59,7 @@ export default function ServiceDetail() {
           </Link>
           <div className="hero-content mt-space">
             <span className="title-small accent-gold">Practice Area</span>
-            <h1 className="title-display service-title">{service.name}</h1>
+            <h1 className="title-display service-title">{service.pageTitle || service.name}</h1>
           </div>
         </div>
       </section>
@@ -57,25 +82,44 @@ export default function ServiceDetail() {
 
           {service.includes && service.includes.length > 0 && (
             <div className="service-includes-box editorial-card">
-              <h3 className="title-small accent-gold" style={{ marginBottom: "1.5rem" }}>Core Capabilities</h3>
-              <ul className="includes-list">
-                {service.includes.map((item, idx) => (
-                  <li key={idx} className="includes-item">
-                    <CheckCircle2 size={20} className="gold-icon flex-shrink-0" />
-                    <span className="text-muted">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="title-small accent-gold" style={{ marginBottom: "1.5rem" }}>Core Capabilities</h2>
+              {groups.map(({ title, items }) => (
+                <div key={title ?? "capabilities"} className="service-capability-group">
+                  {title && <h3 className="title-small" style={{ marginBottom: "1rem" }}>{title}</h3>}
+                  <ul className="includes-list">
+                    {items.map(item => (
+                      <li key={item} className="includes-item">
+                        <CheckCircle2 size={20} className="gold-icon flex-shrink-0" />
+                        <span className="text-muted">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           )}
           {service.closingNote && <p className="text-muted service-closing-note" style={{ marginTop: "2rem", lineHeight: "1.7" }}>{service.closingNote}</p>}
+          {(related.length > 0 || reference) && (
+            <div className="service-resources text-muted mt-space">
+              <h2 className="title-small accent-gold">Related Services and Resources</h2>
+              <ul>
+                {related.map(practice => (
+                  <li key={practice.id}>
+                    <Link to={`/services/${practice.id}`}>{practice.pageTitle || practice.name}</Link>
+                  </li>
+                ))}
+                {reference && <li><a href={reference[1]}>{reference[0]}</a></li>}
+                {lead && <li>Practice contact <Link to="/people">{lead.name}</Link></li>}
+              </ul>
+            </div>
+          )}
         </div>
       </section>
 
       {/* 3. CTA */}
       <section className="container" style={{ paddingBottom: "4rem" }}>
         <div className="service-cta-banner">
-          <h3 className="title-medium">Require assistance with {service.name}?</h3>
+          <h2 className="title-medium">Require assistance with {service.pageTitle || service.name}?</h2>
           <p className="text-muted mt-space">Connect with our specialized advisory team for a strategic consultation.</p>
           <Link to="/contact" className="btn-primary" style={{ marginTop: "2rem", display: "inline-block" }}>Schedule Consultation</Link>
         </div>
@@ -125,6 +169,19 @@ export default function ServiceDetail() {
           border-radius: 16px;
           border: 1px solid var(--border-light);
           box-shadow: 0 12px 32px rgba(31, 31, 31, 0.04);
+        }
+        .service-capability-group + .service-capability-group {
+          margin-top: 1.75rem;
+        }
+        .service-resources ul {
+          margin: 0.75rem 0 0;
+          padding-inline-start: 1.25rem;
+          line-height: 1.7;
+        }
+        .service-resources a {
+          color: inherit;
+          text-decoration: underline;
+          text-underline-offset: 0.15em;
         }
         .includes-list {
           list-style: none;

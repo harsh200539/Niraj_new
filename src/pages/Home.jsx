@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, Award, MapPin } from "lucide-react";
-import heroBg from "../assets/hero-bg.jpg";
+import heroBg from "../assets/hero-bg.webp";
+import heroBgMobile from "../assets/hero-bg-mobile.webp";
 import { practices, people, offices, achievements } from "../data/mockDb";
 import logoImg from "../assets/TNT.png";
 
 export default function Home() {
-  // Statistics state counters
-  const [stats, setStats] = useState({ years: 0, experts: 0, officesCount: 0, volume: 0 });
-
   // Core Values sticky-scroll refs
   const coreValuesRef = useRef(null);
   const valueItemsRef = useRef([]);
@@ -41,37 +39,14 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  // Stats counter animation
-  useEffect(() => {
-    const duration = 1200; // ms
-    const steps = 60;
-    const stepTime = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      setStats({
-        years: Math.min(Math.floor((30 / steps) * step), 30),
-        experts: Math.min(Math.floor((5 / steps) * step), 5),
-        officesCount: Math.min(Math.floor((3 / steps) * step), 3),
-        volume: Math.min(Math.floor((40 / steps) * step), 40)
-      });
-
-      if (step >= steps) {
-        clearInterval(timer);
-      }
-    }, stepTime);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="home-container fade-in-up">
       {/* 1. HERO SECTION */}
       <section
         className="hero-section"
         style={{
-          backgroundImage: `linear-gradient(var(--bg-overlay), var(--bg-overlay)), url(${heroBg})`
+          "--hero-image": `url(${heroBg})`,
+          "--hero-image-mobile": `url(${heroBgMobile})`
         }}
       >
         <div className="container">
@@ -80,7 +55,7 @@ export default function Home() {
               Company Secretary Services in <span style={{ fontStyle: "italic" }}>Vadodara</span>
             </h1>
             <p className="hero-description body-large" style={{ maxWidth: "850px" }}>
-              TNT & Associates, practising company secretaries with a head office in Fatehgunj, Vadodara, provides company secretary services and corporate compliance advisory to businesses in Vadodara, Ahmedabad and across India. The firm offers corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. With a strong focus on regulatory compliance and strategic advisory, the firm provides practical, efficient, and result-oriented solutions to businesses across diverse sectors.
+              TNT & Associates, practising company secretaries with a head office in Fatehgunj, Vadodara, provides company secretary services and corporate compliance advisory to businesses in Vadodara, Ahmedabad and across India. The firm offers corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI, and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services. The firm advises businesses on statutory filings, corporate governance and regulatory requirements.
             </p>
             <div className="hero-actions">
               <Link to="/services" className="btn-primary">Explore Company Secretary Services</Link>
@@ -114,7 +89,7 @@ export default function Home() {
                 margin: 0
               }}
             >
-              At TNT &amp; Associates, CS Niraj Trivedi and our team help businesses with company incorporation, Companies Act compliance, secretarial audits and corporate transactions. Our Vadodara head office is at 218-220 Saffron Complex, Fatehgunj.
+              At TNT &amp; Associates, CS Niraj Trivedi and our team help businesses with <Link to="/services/company-law">company incorporation and Companies Act compliance</Link>, <Link to="/services/audit">secretarial audits</Link> and <Link to="/services/llp">LLP formation</Link>. Our Vadodara head office is at 218-220 Saffron Complex, Fatehgunj.
             </p>
             <p
               style={{
@@ -140,25 +115,11 @@ export default function Home() {
                 margin: 0
               }}
             >
-              More than 35 years of experience in the field of Corporate Law, FEMA, IBC, Intellectual Property Rights.
+              CS Niraj Trivedi has over 30 years of professional experience. He founded the practice in Vadodara in 1999.
             </p>
           </div>
         </div>
       </section>
-
-      {/* 3. DYNAMIC STATISTICS */}
-      {/* <section className="stats-section">
-        <div className="container stats-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
-          <div className="stat-card">
-            <span className="stat-num serif-display">{stats.years}+</span>
-            <span className="stat-label">Years of Experience</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num serif-display">Dedicated</span>
-            <span className="stat-label">Compliance Focus</span>
-          </div>
-        </div>
-      </section> */}
 
       {/* 6. WHY CHOOSE US (VALUES) */}
 
@@ -296,9 +257,20 @@ export default function Home() {
           padding-bottom: 9rem;
           border-bottom: 1px solid var(--border-light);
           position: relative;
+          background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--hero-image);
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
+        }
+        @media (width < 600px) {
+          .hero-section {
+            background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), var(--hero-image-mobile);
+          }
+        }
+        .intro-text-col a {
+          color: inherit;
+          text-decoration: underline;
+          text-underline-offset: 0.15em;
         }
         .hero-content {
           display: flex;

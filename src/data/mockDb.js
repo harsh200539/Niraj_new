@@ -4,7 +4,7 @@
 import AshishImg from '../images/Ashish.jpeg';
 import IsmailImg from '../images/Ismail.jpeg';
 import MonaImg from '../images/Mona.jpeg';
-import NirajImg from '../images/Niraj.jpeg';
+import NirajImg from '../images/Niraj.webp';
 import RiyaImg from '../images/Riya.jpeg';
 import SamirImg from '../images/Samirbhai.jpeg';
 import VedantImg from '../images/Vedant.jpeg';
@@ -40,6 +40,35 @@ export const offices = [
   // }
 ];
 
+const companyLawCapabilities = [
+  { title: "Incorporation and entity changes", items: [
+    "Promotion, formation, and incorporation of companies including Section 8 (Not for Profit Organization/NGO), Producer Companies, Chapter XXI Companies (Conversion into a Company) and matter relating therewith including choice of and type of companies, drafting of Memorandum and Articles of Associations and other documents. This includes conversion of partnership firm into company/ LLP and vice a versa.",
+    "Shifting of Registered Office of the Company from one State to another, Change of name of the company, Conversion of status of the company from private to public and vis-vis and to LLP. Drafting of various documents, petitions, affidavits, advertisements, letters, resolution, forms etc. for the same.",
+    "Providing guidance for Striking off or winding off the company and drafting of necessary resolutions, documents, forms etc.",
+  ] },
+  { title: "ROC filings and statutory records", items: [
+    "Annual filing including XBRL.",
+    "Advising on maintenance of Secretarial Records and Statutory Books and Registers.",
+    "Advising on timely compliance of statutory requirements under Corporate Laws by the companies (Private and Public) to avoid penal action and prosecution to the Companies and its Directors.",
+    "Pre-certification of documents, returns etc. to be submitted with the office of the Registrar of Companies, Regional Director, Ministry of Corporate Affairs etc.",
+  ] },
+  { title: "Corporate governance and compliance", items: [
+    "Issuing status report on statutory/ legal compliance and Issuing Secretarial Compliance Report/ Due Diligence Report wherever it is necessary.",
+    "Advising and attending on conducting the meeting of the Board, Shareholders and Court convened meeting and preparation of documents such as notice, explanatory statements, minutes, Board’s Report, Corporate Governance Report, Business Responsibility and Sustainability Report, etc.",
+    "Helping company in finalization of financial statements including Balance Sheets, Notes thereon.",
+    "Providing opinion on various corporate laws.",
+    "To act as scrutinizer in case of Postal Ballot, Court Conveyed Meeting, Voting through Ballot / E Voting etc.",
+    "Providing guidance on various issues relating to Corporate Social Responsibility (CSR) including drafting of Policy implement and monitor a cohesive CSR policy that is not only compliant with section 135 of the Act but also need-based, strategic, integrated with the value chains, iterative and geared towards business responsibility reporting. Based on our experience and research, we can offer significant value to our clients (at different stages of the CSR lifecycle).",
+  ] },
+  { title: "Corporate transactions and representation", items: [
+    "Appearing as an authorized representative before the Central Government, Regional Director, Registrar of Companies, SEBI, SAT, NCLT and NCLAT on various matters on Corporate Law Related issues.",
+    "Advising and drafting documents on Buy Back of Securities for Listed and Unlisted Companies.",
+    "Providing guidance on restructuring of company, which includes reduction of capital, merger, amalgamation, demerger and also to carry due diligence, etc. and to draft Scheme of Compromise and to provide incidental services to the company.",
+    "Providing necessary guidance for transfer, transmission, transposition, dematerialization, re-materialization of shares and other securities etc. including action to be taken, correspondence with member’s and drafting affidavit, indemnity bond including necessary communication with Depositories and Depository Participants (DP).",
+    "Carrying Due Diligence of the company to make sure that the company has complied with the requirements of corporate laws and regulations made thereunder.",
+  ] },
+];
+
 export const practices = [
   {
     "id": "company-law",
@@ -47,37 +76,20 @@ export const practices = [
     "shortDescription": "Comprehensive advisory and compliance services under the Companies Act, 2013 and rules framed thereunder, supporting businesses throughout their corporate lifecycle.",
     "heading": "Companies Act, 2013 & Rules Framed Thereunder",
     "description": "We provide comprehensive advisory and compliance services under the Companies Act, 2013 assisting companies in meeting their statutory obligations and maintaining effective corporate governance. Our services are designed to support businesses throughout their corporate lifecycle, from incorporation and routine compliances to significant corporate actions and regulatory matters.",
-    "details": "",
-    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
-    "includes": [
-        "Promotion, formation, and incorporation of companies including Section 8 (Not for Profit Organization/NGO), Producer Companies, Chapter XXI Companies (Conversion into a Company) and matter relating therewith including choice of and type of companies, drafting of Memorandum and Articles of Associations and other documents. This includes conversion of partnership firm into company/ LLP and vice a versa.",
-        "Annual filing including XBRL.",
-        "Issuing status report on statutory/ legal compliance and Issuing Secretarial Compliance Report/ Due Diligence Report wherever it is necessary.",
-        "Appearing as an authorized representative before the Central Government, Regional Director, Registrar of Companies, SEBI, SAT, NCLT and NCLAT on various matters on Corporate Law Related issues.",
-        "Advising and attending on conducting the meeting of the Board, Shareholders and Court convened meeting and preparation of documents such as notice, explanatory statements, minutes, Board’s Report, Corporate Governance Report, Business Responsibility and Sustainability Report, etc.",
-        "Helping company in finalization of financial statements including Balance Sheets, Notes thereon.",
-        "Advising and drafting documents on Buy Back of Securities for Listed and Unlisted Companies.",
-        "Providing guidance on restructuring of company, which includes reduction of capital, merger, amalgamation, demerger and also to carry due diligence, etc. and to draft Scheme of Compromise and to provide incidental services to the company.",
-        "Providing opinion on various corporate laws.",
-        "Advising on maintenance of Secretarial Records and Statutory Books and Registers.",
-        "Advising on timely compliance of statutory requirements under Corporate Laws by the companies (Private and Public) to avoid penal action and prosecution to the Companies and its Directors.",
-        "Pre-certification of documents, returns etc. to be submitted with the office of the Registrar of Companies, Regional Director, Ministry of Corporate Affairs etc.",
-        "Providing necessary guidance for transfer, transmission, transposition, dematerialization, re-materialization of shares and other securities etc. including action to be taken, correspondence with member’s and drafting affidavit, indemnity bond including necessary communication with Depositories and Depository Participants (DP).",
-        "Shifting of Registered Office of the Company from one State to another, Change of name of the company, Conversion of status of the company from private to public and vis-vis and to LLP. Drafting of various documents, petitions, affidavits, advertisements, letters, resolution, forms etc. for the same.",
-        "Providing guidance for Striking off or winding off the company and drafting of necessary resolutions, documents, forms etc.",
-        "To act as scrutinizer in case of Postal Ballot, Court Conveyed Meeting, Voting through Ballot / E Voting etc.",
-        "Carrying Due Diligence of the company to make sure that the company has complied with the requirements of corporate laws and regulations made thereunder.",
-        "Providing guidance on various issues relating to Corporate Social Responsibility (CSR) including drafting of Policy implement and monitor a cohesive CSR policy that is not only compliant with section 135 of the Act but also need-based, strategic, integrated with the value chains, iterative and geared towards business responsibility reporting. Based on our experience and research, we can offer significant value to our clients (at different stages of the CSR lifecycle)."
-    ],
-    "closingNote": "We have worked with a good number of companies and have offered comprehensive and customizable services such as guidance notes along with enlightenment of the concept of CSR, its applicability, framing of CSR Policy, annual Action Plan and its implementation for the financial year to help you comply with the provisions of CSR under the Companies Act, 2013."
+    "details": "For a new business, start with its proposed activities, ownership structure and registered office. For an existing company, bring its incorporation records, recent filings and a summary of the change or compliance question. The practice can use that information to identify the relevant records, approvals and filings.",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop",
+    "includes": companyLawCapabilities.flatMap(group => group.items),
+    "capabilityGroups": companyLawCapabilities,
+    "closingNote": "For corporate social responsibility (CSR) matters, the practice advises on applicability, CSR policy, annual action plans and implementation under the Companies Act, 2013."
 },
   {
     id: "ipo",
+    pageTitle: "IPO Advisory & Secretarial Due Diligence",
     name: "Initial Public Offering (IPO) Services",
     shortDescription: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements.",
     description: "We provide end-to-end professional assistance to companies undertaking an Initial Public Offering (IPO), with a strong focus on corporate, secretarial, regulatory and compliance requirements. Our team assists companies in preparing for the IPO process and navigating the regulatory framework applicable to public issues and listing of securities.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1200&auto=format&fit=crop",
+    details: "This service is for companies assessing an initial public offering or preparing for listing. A review can start with the proposed listing route, shareholding and allotment history, board approvals, statutory registers and recent filings. The review helps identify gaps in corporate records, clarify who needs to address them, and coordinate the secretarial workstream with the issuer’s appointed advisers. Support can also cover post-listing compliance planning.",
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=900&auto=format&fit=crop",
     includes: [
       "IPO Due Diligence",
       "Corporate and Secretarial Due Diligence",
@@ -93,11 +105,12 @@ export const practices = [
   },
   {
     id: "llp",
+    pageTitle: "LLP Formation & Compliance",
     name: "Limited Liability Partnership Act",
     shortDescription: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes.",
     description: "We provide comprehensive legal, secretarial and regulatory services for Limited Liability Partnerships, assisting clients from incorporation and structuring to ongoing statutory compliances and corporate changes. Our services are tailored to meet the specific requirements of LLPs under the Limited Liability Partnership Act, 2008 and applicable rules and regulations.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+    details: "Prospective partners can start with proposed names, business activities, registered office details, partner information, capital contributions and the agreed roles of the partners. The practice can help prepare the LLP agreement and incorporation filings, then identify ongoing and event-based filings relevant to the LLP. An existing LLP seeking a partner or office change can provide its current agreement, registration details and the proposed change.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Assistance with incorporation, name approval, preparation of the LLP Agreement and statutory filings.",
       "Formation of LLP, conversion of Company into LLP or otherwise.",
@@ -116,7 +129,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder.",
     description: "We provide comprehensive advisory and compliance services in relation to the Securities and Exchange Board of India Act and the regulations, rules and guidelines issued thereunder. Our services are aimed at helping companies, promoters, investors and other market participants understand and comply with the evolving securities regulatory framework.",
     details: "",
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Providing guidance for Listing / Revocation of securities with stock exchanges.",
       "Providing guidance as required under the Listing Regulations and action to be taken by the company there under such as periodically compliance including compliances under Corporate Governance and Listing Regulation etc.",
@@ -135,7 +148,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder.",
     description: "We provide comprehensive advisory and compliance services under the Foreign Exchange Management Act, 1999 (FEMA) and the regulations, rules, notifications and directions issued thereunder. We assist Indian and foreign businesses in navigating cross-border transactions and ensuring compliance with the applicable foreign exchange framework.",
     details: "",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Formation of Joint Venture (JV), Wholly Owned Subsidiary companies in and outside India in compliance with the requirements under Reserve Bank of India (RBI) / Department of Industrial Policy and Promotion (DIPP) and guideline framed thereunder.",
       "Providing guidance on inbound & outbound investments.",
@@ -153,8 +166,8 @@ export const practices = [
     name: "Foreign Contribution (Regulation) Act",
     shortDescription: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder.",
     description: "We provide advisory and compliance services under the Foreign Contribution Regulation Act, 2010 (FCRA) and the rules and regulations framed thereunder. We assist eligible organisations in ensuring proper regulatory compliance while receiving, utilising and reporting foreign contributions in accordance with the applicable legal framework.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=1200&auto=format&fit=crop",
+    details: "An organisation exploring foreign contributions can prepare its governing documents, activity records, details of the proposed contribution and any existing registration or prior permission. The review starts with the type of filing the organisation needs, such as a new application, renewal or a change to its registered particulars. The Ministry of Home Affairs publishes FCRA forms and updates.",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Providing guidance on eligibility criteria for Registration and Prior Permission.",
       "Advising on and documentation required for Prior Permission, Registration, Condonation, Restoration, Shifting of Designated Bank, Renewal, change of constitution etc. of NGOs.",
@@ -169,7 +182,7 @@ export const practices = [
     shortDescription: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC).",
     description: "We provide comprehensive legal and advisory services in matters arising under the Insolvency and Bankruptcy Code, 2016 (IBC). Our team assists corporate entities, creditors and other stakeholders in navigating insolvency proceedings, restructuring requirements and related proceedings before the adjudicating and appellate authorities.",
     details: "",
-    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Drafting of Notice and application including Voluntary Liquidation under Insolvency Code.",
       "Appearing before NCLT and NCLAT for the matter under IBC.",
@@ -186,7 +199,7 @@ export const practices = [
     shortDescription: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations.",
     description: "We provide comprehensive legal, regulatory and compliance services to banks, financial institutions and other regulated entities in relation to applicable banking laws and regulations, including the Banking Regulation Act, RBI directions and other relevant regulatory frameworks. Our services are designed to assist clients in meeting regulatory obligations, maintaining effective governance and addressing complex banking and financial matters.",
     details: "",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Providing Search Report based on documents available on MCA.",
       "Examine covenants contained in the loan agreement thoroughly and to check whether all notices required to be sent to the Financial Institutions and Banks have been complied and necessary approvals were obtained from the FI and Banks wherever required.",
@@ -198,11 +211,12 @@ export const practices = [
   },
   {
     id: "audit",
+    pageTitle: "Secretarial Audit & Compliance Review",
     name: "Audit",
     shortDescription: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards.",
     description: "We provide specialized audit and compliance review services to help companies assess their compliance with applicable corporate laws, regulations and secretarial standards. Our audit approach focuses on identifying compliance gaps, strengthening governance practices and providing practical recommendations for corrective measures.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
+    details: "A secretarial audit examines compliance with applicable corporate laws and secretarial standards, including board processes and statutory records. Applicability depends on the company’s circumstances and the rules that apply to it. To start, gather recent board and shareholder minutes, statutory registers, regulatory filings and records of significant corporate actions. The scope determines whether the engagement produces a statutory report, a compliance report or a review of gaps and follow-up actions.",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Due Diligence under Corporate Laws in case of Take Over, Change in Management, Joint Venture, IPO, QIB etc.",
       "Conducting Secretarial Audit in accordance with the Companies Act, 2013 and applicable regulations.",
@@ -218,8 +232,8 @@ export const practices = [
     name: "Intellectual Property Laws",
     shortDescription: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets.",
     description: "We provide advisory and legal support in matters relating to Intellectual Property Rights (IPR), helping businesses protect, manage and commercially utilise their intellectual assets. Our services cover the identification, registration, protection and enforcement of intellectual property rights in accordance with applicable laws.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200&auto=format&fit=crop",
+    details: "For trademark matters, prepare the proposed mark, the goods or services it identifies, ownership details and any existing applications, registrations or notices. These records help define whether the work concerns an application, a response to the Registry or a licensing arrangement. The practice also advises on trademark disputes and representation before the Registry as applicable.",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Advising on intellectual Property Licensing.",
       "Getting Trademark Registered.",
@@ -234,7 +248,7 @@ export const practices = [
     shortDescription: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities.",
     description: "We provide comprehensive advisory and implementation support for corporate restructuring transactions, helping businesses reorganize their corporate structure, ownership, operations and liabilities in accordance with their strategic and commercial objectives. Our team assists clients in navigating the legal, regulatory and procedural requirements involved in complex restructuring transactions.",
     details: "",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Advisory and assistance in relation to mergers, amalgamations and schemes of arrangement between companies.",
       "Assistance with demergers and re-organisation of business undertakings.",
@@ -250,8 +264,8 @@ export const practices = [
     name: "Capital Restructuring Services",
     shortDescription: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives.",
     description: "We advise companies on restructuring and reorganising their share capital and securities structure to meet their business, financial and strategic objectives. Our services cover a wide range of capital-related corporate actions, with assistance in fulfilling the applicable legal, regulatory and procedural requirements.",
-    details: "",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
+    details: "This practice area is relevant to businesses planning a change in share capital, a buy-back or an issuance. Start with the current capital table, the articles of association, available corporate approvals and the proposed transaction terms. The practice assesses the approvals, filings and sequencing for the structure under consideration, including tribunal proceedings where applicable.",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=900&auto=format&fit=crop",
     includes: [
       "Advisory and assistance in relation to reduction of share capital and the requisite regulatory and NCLT process.",
       "Assistance with buy-back of shares and other securities in accordance with applicable laws and regulations.",
@@ -382,14 +396,14 @@ export const awards = [
 export const aboutOverview = {
   headline: "TNT & Associates • Practicing Company Secretaries",
   paragraphs: [
-    "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries. The firm expanded its practice in 2005 to offer a wider range of services including SEBI regulations, FEMA compliances, corporate advisory and representation before various quasi-judicial authorities. This expansion enabled the firm to provide comprehensive solutions to clients navigating increasingly complex legal and regulatory requirements.",
+    "Established in 1999 by CS Niraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries. The firm expanded its practice in 2005 to offer a wider range of services including SEBI regulations, FEMA compliances, corporate advisory and representation before various quasi-judicial authorities. This expansion enabled the firm to provide comprehensive solutions to clients navigating increasingly complex legal and regulatory requirements.",
     "In 2018, the firm strengthened its presence with the establishment of its Ahmedabad office and launched a dedicated practice for matters before the National Company Law Tribunal (NCLT) and under the Insolvency and Bankruptcy Code (IBC). These developments marked a significant milestone in the firm's journey towards becoming a full-service corporate advisory practice.",
     "At TNT & Associates, our approach is built on understanding our clients' businesses, anticipating challenges and providing practical solutions that support informed decision making and sustainable growth. By combining technical expertise with commercial insight, we deliver advice that is both legally robust and business-oriented.",
     "Over the decades, the firm is offering comprehensive corporate and regulatory advisory services with expertise in Initial Public Offerings (IPOs), Due Diligence, NCLT representation under the Companies Act, 2013 and the Insolvency and Bankruptcy Code, 2016 (IBC), FEMA compliances including FDI, ODI and ECB, Secretarial Audits, Corporate Restructuring, Capital Restructuring, Change of Management and Intellectual Property Law services.",
     "Today, TNT & Associates has established a strong presence across India through its offices and associate network including Delhi. The firm proudly advises listed companies, multinational corporations, private enterprises, startups and emerging businesses, thus delivering practical and commercially driven solutions while upholding the highest standards of professionalism, integrity and client service.",
 
   ],
-  body1: "Established in 1999 by CS Neeraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries.",
+  body1: "Established in 1999 by CS Niraj Trivedi, TNT & Associates was founded with the vision of providing specialized company secretarial and corporate advisory services from Vadodara, Gujarat. What began as a focused professional practice has, over the years, evolved into a trusted corporate advisory firm serving businesses across diverse industries.",
   body2: "Today, TNT & Associates has established a strong presence across India through its offices and associate network including Delhi, advising listed companies, multinational corporations, private enterprises, startups and emerging businesses."
 };
 
