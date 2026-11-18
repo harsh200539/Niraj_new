@@ -21,7 +21,7 @@ export default function DisclaimerModal() {
   return (
     <div className="disclaimer-overlay">
       <div className="disclaimer-box">
-        <img src={logoImg} alt="TNT & Associates Logo" className="disclaimer-logo" />
+        <img src={logoImg} alt="TNT & Associates Logo" width={842} height={595} className="disclaimer-logo" />
         <h2 className="serif-display font-large">Regulatory Information</h2>
         <div className="disclaimer-divider"></div>
         <p className="disclaimer-text">

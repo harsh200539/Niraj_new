@@ -58,7 +58,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
     <div className="search-overlay-fullscreen">
       <div className="search-header-container container">
         <div className="search-logo">
-          <img src={logoImg} alt="TNT & Associates Logo" className="search-logo-img" />
+          <img src={logoImg} alt="TNT & Associates Logo" width={842} height={595} className="search-logo-img" />
           <span className="logo-brand">TNT &amp; ASSOCIATES</span>
         </div>
         <button className="search-close-btn" onClick={onClose} aria-label="Close search">

@@ -14,7 +14,12 @@ try {
   const meta=getMetadata(path);
   let body=renderToString(createElement(App,{initialPath:path}));
   for(const [source,asset] of Object.entries(manifest)) body=body.replaceAll('/'+source,'/'+asset.file);
+  const heroPreloads = path === '/' ? [
+    ['hero-bg-mobile.webp', '(width < 600px)'],
+    ['hero-bg.webp', '(width >= 600px)'],
+  ].map(([asset, media]) => `<link rel="preload" as="image" href="/${manifest['src/assets/' + asset].file}" media="${media}" fetchpriority="high">`) : [];
   const tags = [
+   ...heroPreloads,
    `<title>${escape(meta.title)}</title>`, `<meta name="description" content="${escape(meta.description)}">`,
    `<meta name="robots" content="${meta.noindex?'noindex, follow':'index, follow, max-image-preview:large'}">`, `<link rel="canonical" href="${meta.url}">`,
    ...Object.entries({'og:title':meta.title,'og:description':meta.description,'og:url':meta.url,'og:type':'website','og:site_name':'TNT & Associates','og:locale':'en_IN','og:image':origin+'/TNT.png','og:image:alt':'TNT & Associates logo'}).map(([key,value])=>`<meta property="${key}" content="${escape(value)}">`),

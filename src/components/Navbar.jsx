@@ -64,7 +64,7 @@ export default function Navbar({ onSearchOpen }) {
       <header className={`navbar-header ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
           <Link to="/" className="logo-area" aria-label="Home" onClick={() => { setMobileMenuOpen(false); window.scrollTo(0, 0); }}>
-            <img src={logoImg} alt="TNT & Associates Logo" className="navbar-logo-img" />
+            <img src={logoImg} alt="TNT & Associates Logo" width={842} height={595} className="navbar-logo-img" />
             <div className="logo-text">
               <span className="logo-brand">TNT &amp; ASSOCIATES</span>
               <span className="logo-sub">COMPANY SECRETARIES</span>

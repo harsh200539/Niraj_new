@@ -125,6 +125,10 @@ export default function About() {
                       <img
                         src={partner.image}
                         alt={partner.name}
+                        width={900}
+                        height={1080}
+                        loading="lazy"
+                        decoding="async"
                         className="leadership-portrait-img"
                       />
                       <div className="leadership-portrait-caption">
